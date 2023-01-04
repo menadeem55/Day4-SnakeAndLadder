@@ -45,11 +45,11 @@ public class SnakeLadder {
 		default:  
 			System.out.println("Snake!");
 			userPosition = userPosition - dice;
-
+			
 			if (userPosition < 0) {
 				userPosition = 0;
 			}
-		}
+		}System.out.println("Number of times user played "+count+" to reach: "+userPosition);  //Print the how many times user played and to reach
 		System.out.println("Presnt Position of the User: " + userPosition); //printing present position
 	}
 	System.out.println("User has rolled "+count+" times to win!"); //printing the user rolled how many time to win
