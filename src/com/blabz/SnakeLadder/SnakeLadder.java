@@ -21,10 +21,32 @@ public class SnakeLadder {
 		 *Generate numbers in the range 1to6
 		 * print dice roll result
 		 */
-		Random random = new Random();     //craete an class
+		Random random = new Random();     //create an random object
 		int dice = random.nextInt(6)+1;   //Invoke methods and generating numbers
 		System.out.println("dice roll result: "+dice);  //print dice roll result
+	    
+		int userPosition = 0;   // Set the new position
+		int cases = random.nextInt(3); //generating number between 0to3
 		
-	}
+		switch (cases) { //Using switch keyword
+		case 0:
+			System.out.println("No Play!!");   //print statement to be executed
+			break;    //break out of the switch block
+			
+		case 1:
+			System.out.println("Ladder!");   //print statement to be executed
+			userPosition = userPosition + dice; 
+			break;
+			
+		default:  
+			System.out.println("Snake!");
+			userPosition = userPosition - dice;
 
+			if (userPosition < 0) {
+				userPosition = 0;
+			}
+		}
+		System.out.println("Presnt Position of the User: " + userPosition);
+	}
+		
 }
