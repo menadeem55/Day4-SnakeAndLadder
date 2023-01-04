@@ -4,12 +4,9 @@ import java.util.Random;
 
 public class SnakeLadder {
 	public static void main(String[] args) {
-		int start;
-		
-		/*
-		 * player starting point
-		 */
-		start =  0; 
+		int start = 0;
+		int userPosition = 0;
+		int count = 0;
 		
 		//print the starting position 
 		System.out.println("Player Starting Position will be:~ ");
@@ -22,10 +19,12 @@ public class SnakeLadder {
 		 * print dice roll result
 		 */
 		Random random = new Random();     //create an random object
+		while (userPosition != 100) {
+			count++;
+		
 		int dice = random.nextInt(6)+1;   //Invoke methods and generating numbers
 		System.out.println("dice roll result: "+dice);  //print dice roll result
 	    
-		int userPosition = 0;   // Set the new position
 		int cases = random.nextInt(3); //generating number between 0to3
 		
 		switch (cases) { //Using switch keyword
@@ -46,7 +45,10 @@ public class SnakeLadder {
 				userPosition = 0;
 			}
 		}
-		System.out.println("Presnt Position of the User: " + userPosition);
+		System.out.println("Presnt Position of the User: " + userPosition); //printing present position
+	}
+	System.out.println("User has rolled "+count+" times to win!"); //printing the user rolled how many time to win
+	
 	}
 		
 }
