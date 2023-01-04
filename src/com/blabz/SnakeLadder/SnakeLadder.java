@@ -17,9 +17,10 @@ public class SnakeLadder {
 		 *Then Invoke methods
 		 *Generate numbers in the range 1to6
 		 * print dice roll result
+		 * Checked the condition user position
 		 */
 		Random random = new Random();     //create an random object
-		while (userPosition != 100) {
+		while (userPosition != 100) {     //Checking position is not equal to 100
 			count++;
 		
 		int dice = random.nextInt(6)+1;   //Invoke methods and generating numbers
@@ -35,6 +36,10 @@ public class SnakeLadder {
 		case 1:
 			System.out.println("Ladder!");   //print statement to be executed
 			userPosition = userPosition + dice; 
+			if(userPosition > 100)     // To check condition is grater
+			{
+				userPosition = dice;
+			}
 			break;
 			
 		default:  
